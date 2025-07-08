@@ -1,0 +1,17 @@
+1. DATEADD for YoY comparison
+Sales_YoY = 
+CALCULATE(
+    [Total_Sales],
+    DATEADD('Date'[Date], -1, YEAR)
+)
+
+// 2. DATESBETWEEN for quarter analysis
+Q2_Sales = 
+CALCULATE(
+    [Total_Sales],
+    DATESBETWEEN(
+        'Date'[Date],
+        DATE(2023,4,1),
+        DATE(2023,6,30)
+    )
+)
